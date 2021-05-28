@@ -10,7 +10,7 @@ const getSearchResults = async (search) => {
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      return false
     })
 }
 
@@ -22,7 +22,7 @@ const getPerson = async (id) => {
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      return false
     })
 }
 
