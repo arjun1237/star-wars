@@ -5,21 +5,24 @@ import {getPerson} from '../../utils/api-calls'
 
 function Person() {
   let {id} = useParams()
-  const [person, setPerson] = useState({})
+  const [person, setPerson] = useState(null)
 
   useEffect(() => {
     (async function(){
-      setPerson(await getPerson(id))
+      const res = await getPerson(id)
+      if(res){
+        setPerson(res)
+      }
     })()
 
   }, [id])
 
   console.log(person)
-  return (
+  return person ? (
     <div className={styles.person}>
       <h1>{person.name}</h1>
     </div>
-  );
+  ) : <h1>Person Not Found..!</h1>;
 }
 
 export default Person;
