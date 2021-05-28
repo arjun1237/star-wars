@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
 
 function NotFound() {
   return (
-    <div className="not-found">
+    <div className={styles["not-found"]}>
       <h2>This is not the page you are looking for</h2>
     </div>
   );

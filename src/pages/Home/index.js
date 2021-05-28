@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './star-wars-logo.png';
-import './index.css';
+import styles from './index.module.css';
 
 function HomePage() {
   return (
     <div>
-      <div className="logo">
+      <div className={styles.logo}>
         <img src={logo} alt="Star Wars Logo" />
       </div>
-      <input className="search-input" placeholder="Search by name" />
+      <input className={styles["search-input"]} placeholder="Search by name" />
     </div>
   );
 }

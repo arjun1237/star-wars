@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
 
 function Person() {
   return (
-    <div className="person">
+    <div className={styles.person}>
       <h1>Luke Skywalker</h1>
     </div>
   );
