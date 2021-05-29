@@ -1,13 +1,12 @@
+
 .search-input {
-    width: 40vw;
-    max-width: 400px;
-    padding: 16px 24px;
+    width: 28vw;
+    max-width: 300px;
+    padding: 16px 94px 16px 24px;
     border-radius: 25px;
     border: 0;
     outline: 0;
-
     font-size: 1rem;
-
     background: #2d2f30;
     color: #f2f2f2;
 }
@@ -17,11 +16,125 @@
     margin-bottom: 35px;
 }
 
-.logo img {
-    width: 200px;
+.logo > img{
+    width: 30vw;
+    max-width: 200px;
+}
+
+.searchUtils{
+    position: absolute;
+    display: flex;
+    right: 6px;
+    top: 8px;
+    align-items: center;
+}
+
+.searchUtils > div{
+    margin: 0 5px;
 }
 
 .inputWrapper{
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+.listWrap{
+    background: #2d2f30;
+    color: #f2f2f2;
+    padding: 0 0 10px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+    font-size: 15px;
+    margin: 0;
+}
+
+.listWrap a{
+    color: #f2f2f2;
+    list-style: none;
+    text-decoration: none;
+}
+
+.listWrap li > div:first-of-type{
+    display: flex;
+    justify-content: space-between;
+}
+
+.listWrap li{
+    padding: 10px 24px;
+}
+
+.listWrap a:focus li, .listWrap li:hover{
+    background-color: #1b1c1d;
+}
+
+.grayed{
+    color: #f2f2f283;
+}
+
+.divider{
+    height: 20px;
+    margin-top: -20px;
+    background: #2d2f30;
+}
+
+.lineTop{
+    height: 15px;
+}
+
+.line{
+    background: #110b0b;
+    height: 1px;
+    margin: 0 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.searchbarIcon{
+    background-color: #EBCF23;
+    height: 32px;
+    width: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+}
+
+.verticalDivider{
+    height: 30px;
+    width: 1px;
+    background-color: #110b0b;
+}
+
+.cross{
+    color: #929292;
+}
+
+
+@media screen and (max-width: 720px) {
+
+    .listWrap{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .listWrap{
+        font-size: 8px;
+    }
+}
+
+.listWrap::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.listWrap::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.listWrap::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    outline: 1px solid #31353a;
 }

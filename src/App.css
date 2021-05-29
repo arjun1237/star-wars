@@ -1,10 +1,12 @@
 .app {
     min-height: 100vh;
     background: #110b0b;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
+.app > div{
+    height: 400px;
 }
