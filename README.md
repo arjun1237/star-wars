@@ -1,4 +1,4 @@
-# Chitrakala - Ticket Booking React app
+# Star Wars Searchbar
 
 > A searchbar that filters and lists your favourite star wars character as you type their names and on clicking, redirects the profile page of the character.
 
@@ -57,7 +57,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Utilized prop frilling and and basic concepts of react to build this application
+- Utilized prop drilling and basic concepts of react to build this application
 - Used SWABI API for all API calls
 
 ## 📝 License
