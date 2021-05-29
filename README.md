@@ -6,10 +6,25 @@
 
 ![image](https://raw.githubusercontent.com/arjun1237/star-wars/main/public/product-final.gif)
 
+## Testing
+
+The App was tested with Cypress. Several use cases was implemented and passed as per the conditions put forward.
+
+![image](https://raw.githubusercontent.com/arjun1237/star-wars/main/src/resources/pics/cypress.png)
+
 ## Built With
 
 - React js
 - Styled Components
+
+## Optmization
+
+- Used Combination of throttling and debounce to reduce API calls made for each key stroke on the searchbar.
+
+## Acknowledgments
+
+- Utilized prop drilling and basic concepts of react to build this application
+- Used SWABI API for all API calls
 
 ## Getting Started
 
@@ -57,11 +72,6 @@ Feel free to check the [issues page](https://github.com/arjun1237/star-wars/issu
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Utilized prop drilling and basic concepts of react to build this application
-- Used SWABI API for all API calls
 
 ## 📝 License
 
