@@ -5,6 +5,8 @@ import { faMale, faFemale } from '@fortawesome/free-solid-svg-icons'
 import { Bio } from './Bio';
 import { useHistory } from 'react-router';
 
+
+// This component displays the person with icon signifying the gender
 export const DisplayPerson = ({person, homeWorld, films}) => {
 	const history = useHistory()
 
