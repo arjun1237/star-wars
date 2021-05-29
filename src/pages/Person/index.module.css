@@ -36,6 +36,24 @@ table td{
     padding: 3px 20px 3px 0;
 }
 
+.btnWrap > div{
+    margin: 30px auto;
+    text-align: center;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: 2px solid;
+    font-weight: 800;
+}
+
+.btnHover:hover{
+    background-color: #EBCF23;
+    color: #2d2f30;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #EBCF23
+}
+
 
 
 /* media queries */
