@@ -4,6 +4,10 @@ import styles from './index.module.css';
 import {getSearchResults} from '../../utils/api-calls'
 import { Link } from 'react-router-dom';
 import {v4 as uuid} from 'uuid'
+import { capitalizeFirstLetter, getID } from '../../utils/helperFunctions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes, faSearch } from '@fortawesome/free-solid-svg-icons'
+import {SearchUtilsWrapper} from '../../styles/home-styles'
 
 function HomePage() {
 
@@ -11,7 +15,9 @@ function HomePage() {
   const [people, setPeople] = useState([])
   let time = useRef()
   let previous = useRef()
-  const wait = 1000
+  let listRef = useRef([])
+  let listFocusIndexRef = useRef(0)
+  const wait = 750
 
   useEffect(() => {
     // throttling implementation
@@ -34,45 +40,84 @@ function HomePage() {
   const handleSearch = (e) => {
     let val = e.target.value
     setSearch(val)
+    listFocusIndexRef.current = 0
   }
 
   const extractPeopleInfo = async (search) => {
     if(search.length === 0){
+      listFocusIndexRef.current = 0
       setPeople([])
     }
     else{
       let res = await getSearchResults(search.trim())
-      if(!res){
+      if(res){
         setPeople(res)
       }
     }
   }
 
-  const getID = (url) => {
-    try{
-      let val = url.split('people')[1]
-      return val.substring(1, val.length-1)
+  // when arrow key is pressed up or down, respective list is focused
+  const handleArrows = (e) => {
+    if(people.length === 0){
+      listFocusIndexRef.current = 0
+      return
     }
-    catch(err) {
-      return 1
+    let code = e.keyCode
+    if(code === 38 || code === 40){
+      if(code === 40){
+        listFocusIndexRef.current = listFocusIndexRef.current === people.length ? 1 : ++listFocusIndexRef.current
+      }
+      if(code === 38){
+        listFocusIndexRef.current = listFocusIndexRef.current === 1 || listFocusIndexRef.current === 0? people.length : --listFocusIndexRef.current
+      }
+      listRef.current[listFocusIndexRef.current-1].focus()
     }
+  }
+  
+  const clearSearch = () => {
+    setSearch("")
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.logo}>
         <img src={logo} alt="Star Wars Logo" />
       </div>
       <div className={styles.inputWrapper}>
         <div>
-          <input type="text" className={styles["search-input"]} placeholder="Search by name" value={search} onChange={handleSearch} />
-          <ul>
-            {people?.map(person =>
-              <Link to={`/person/${getID(person.url)}`} key={uuid()}>
-                <li>{person.name}</li>
-              </Link>
-            )}
-          </ul>
+          <SearchUtilsWrapper className={styles.searchUtils} display={(search.length > 0).toString()}>
+            <div className={`${styles.cross} searchUtilDisplay`} onClick={clearSearch}>
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
+            <div className={`${styles.verticalDivider} searchUtilDisplay`}></div>
+            <div className={styles.searchbarIcon}>
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
+          </SearchUtilsWrapper>
+          <input type="text" className={styles["search-input"]} placeholder="Search by name" value={search} onChange={handleSearch} onKeyUp={handleArrows} onClick={() => listFocusIndexRef.current = 0} />
+          {
+            people.length > 0 && 
+            <div>
+              <div className={styles.divider}>
+                <div className={styles.lineTop}></div>
+                <div className={styles.line}></div>
+              </div>
+              <ul className={styles.listWrap}>
+                {people.map((person, idx) =>
+                  <Link to={`/person/${getID(person.url)}`} key={uuid()} ref={el => listRef.current[idx] = el} tabIndex={idx+1} onKeyUp={handleArrows} >
+                    <li>
+                      <div>
+                        <div>{person.name}</div>  
+                        <div className={styles.grayed}>{capitalizeFirstLetter(person.gender)}</div>  
+                      </div>  
+                      <div className={styles.grayed}>{person.birth_year}</div>  
+                    </li>
+                  </Link>
+                )}
+              </ul>
+            </div>
+          }
+          
         </div>
       </div>
 
