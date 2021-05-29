@@ -10,3 +10,19 @@
 .app > div{
     height: 400px;
 }
+
+
+.spinner{
+    animation: spin 1s linear infinite;
+}
+
+.color-yellow{
+    color: #EBCF23;
+}
+
+/* animations */
+/* ------------------------------------------------------------------------- */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
