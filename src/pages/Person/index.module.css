@@ -1,3 +1,50 @@
-.person h1 {
+.personDetails {
     color: #ecd014;
+    display: flex;
+}
+
+.personDetails > div{
+    margin: 0 20px;
+}
+
+.personDetails h1{
+    margin: 0 0 10px;
+}
+
+.frame{
+    border: 6px solid #ecd014;
+    padding: 40px 20px;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.frame > *{
+    margin: auto;
+    display: block;
+}
+
+table{
+    font-size: 16px;
+    max-width: 300px;
+}
+
+tr > td:first-of-type{
+    width: 100px;
+}
+
+table td{
+    padding: 3px 20px 3px 0;
+}
+
+
+
+/* media queries */
+/* --------------------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+
+    .personDetails {
+        color: #ecd014;
+        display: block;
+    }
 }

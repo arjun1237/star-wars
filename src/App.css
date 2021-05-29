@@ -8,7 +8,7 @@
 }
 
 .app > div{
-    height: 400px;
+    min-height: 400px;
 }
 
 
@@ -18,6 +18,10 @@
 
 .color-yellow{
     color: #EBCF23;
+}
+
+.bg-yellow{
+    background-color: #EBCF23;
 }
 
 /* animations */

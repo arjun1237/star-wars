@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import styles from './index.module.css';
 import {getPerson} from '../../utils/api-calls'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { DisplayPerson } from './DisplayPerson';
 
 function Person() {
   let {id} = useParams()
@@ -22,12 +22,8 @@ function Person() {
 
   }, [id])
 
-  console.log(person)
-  return loading ? <FontAwesomeIcon icon={faSpinner} size="6x" className={`color-yellow spinner`} /> : person ? (
-    <div className={styles.person}>
-      <h1>{person.name}</h1>
-    </div>
-  ) : <h1>Person Not Found..!</h1>;
+  return  loading ? <FontAwesomeIcon icon={faSpinner} size="6x" className={`color-yellow spinner`} /> : 
+          person ?  <DisplayPerson person={person} /> : <h1 className="color-yellow">Person Not Found..!</h1>;
 }
 
 export default Person;
