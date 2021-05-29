@@ -9,6 +9,7 @@
 
 .app > div{
     min-height: 400px;
+    margin: 20px 5px;
 }
 
 
@@ -22,6 +23,26 @@
 
 .bg-yellow{
     background-color: #EBCF23;
+}
+
+.border-color-yellow{
+    border-color: #EBCF23;
+}
+
+.bg-brown-gray{
+    background-color: #2d2f30;
+}
+
+.color-whitish{
+    color: #f2f2f2;
+}
+
+.color-light-gray{
+    color: #f2f2f283;
+}
+
+.bg-blackish{
+    background: #110b0b;
 }
 
 /* animations */

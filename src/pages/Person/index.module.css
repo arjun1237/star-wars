@@ -1,10 +1,9 @@
 .personDetails {
-    color: #ecd014;
     display: flex;
 }
 
 .personDetails > div{
-    margin: 0 20px;
+    margin: 10px 20px;
 }
 
 .personDetails h1{
@@ -12,10 +11,11 @@
 }
 
 .frame{
-    border: 6px solid #ecd014;
+    border: 6px solid;
     padding: 40px 20px;
     border-radius: 15px;
     height: fit-content;
+    text-align: center;
 }
 
 .frame > *{
@@ -44,7 +44,6 @@ table td{
 @media screen and (max-width: 600px) {
 
     .personDetails {
-        color: #ecd014;
         display: block;
     }
 }

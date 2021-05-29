@@ -1,10 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import { getFilms, getHomeWorld } from '../../utils/api-calls';
+import {v4 as uuid} from 'uuid'
 
 export const Bio = ({person}) => {
 
 	let [homeWorld, setHomeWorld] = useState("")
 	let [films, setFilms] = useState([])
+
+    const bioDetail = [
+        {
+            title: "Home World",
+            value: homeWorld.length === 0 ? "Not Known" : homeWorld
+        },
+        {
+            title: "Films",
+            value: films.join(", ")
+        },
+        {
+            title: "Birth year",
+            value: person.birth_year
+        },
+        {
+            title: "Height",
+            value: person.height
+        },
+        {
+            title: "Weight",
+            value: person.mass
+        },
+        {
+            title: "Hair Color",
+            value: person.hair_color
+        },
+        {
+            title: "Skin Color",
+            value: person.skin_color
+        }
+    ]
 
 	useEffect(() => {
 		
@@ -15,13 +47,12 @@ export const Bio = ({person}) => {
 			}
 
 			let films = await getFilms(person.films)
-			console.log(films)
 			if(films){
 				setFilms(films)
 			}
 		})()
 
-	}, [homeWorld, films])
+	}, [])
 
 
     return (
@@ -31,34 +62,12 @@ export const Bio = ({person}) => {
             </div>
             <table>
                 <tbody>
-                    <tr>
-                        <td>Home World</td>
-                        <td>{homeWorld.length === 0 ? "Not Known" : homeWorld}</td>
-                    </tr>
-                    <tr>
-                        <td>Films</td>
-                        <td>{films.join(", ")}</td>
-                    </tr>
-                    <tr>
-                        <td>Birth year</td>
-                        <td>{person.birth_year}</td>
-                    </tr>
-                    <tr>
-                        <td>Height</td>
-                        <td>{person.height}</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>{person.mass}</td>
-                    </tr>
-                    <tr>
-                        <td>Hair Color</td>
-                        <td>{person.hair_color}</td>
-                    </tr>
-                    <tr>
-                        <td>Skin Color</td>
-                        <td>{person.skin_color}</td>
-                    </tr>
+                    {bioDetail.map(detail => 
+                        <tr key={uuid()}>
+                            <td>{detail.title}</td>
+                            <td>{detail.value}</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </div>
