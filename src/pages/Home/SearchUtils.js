@@ -7,7 +7,7 @@ import styles from './index.module.css';
 export const SearchUtils = ({loading, search, clearSearch}) => {
     return (
         <SearchUtilsWrapper className={styles.searchUtils} display={(search.length > 0).toString()}>
-            <div className={`${styles.cross} searchUtilDisplay`} onClick={clearSearch}>
+            <div className={`${styles.cross} searchUtilDisplay cross`} onClick={clearSearch}>
                 <FontAwesomeIcon icon={faTimes} />
             </div>
             <div className={`${styles.verticalDivider + " bg-blackish"} searchUtilDisplay`}></div>

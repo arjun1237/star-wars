@@ -16,12 +16,12 @@ export const DisplayPerson = ({person, homeWorld, films}) => {
 		<div>
 			<div className={styles.personDetails + " color-yellow"}>
 				<div className={styles.frame + " border-color-yellow"}>
-					<h1>{person.name}</h1>
+					<h1 className="name">{person.name}</h1>
 					<FontAwesomeIcon icon={person.gender === "male" ? faMale : faFemale} size="10x" />
 				</div>
 				<Bio person={person} homeWorld={homeWorld} films={films} />
 			</div>
-			<div className={styles.btnWrap}>
+			<div className={styles.btnWrap + " button"}>
 				<div className={"border-color-yellow color-yellow " + styles.btnHover} onClick={clickHandler}>Back to HOME</div>
 			</div>
 		</div>

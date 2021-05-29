@@ -2,9 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import logo from '../../resources/pics/star-wars-logo.png';
 import styles from './index.module.css';
 import {getSearchResults} from '../../utils/api-calls'
-import { throttle } from '../../utils/throttle'
 import { SearchUtils } from './SearchUtils';
 import { SearchResult } from './SearchResult';
+
+
+// this variable help in throttling.
+let time = null
+let previous = null
+const wait = 1000
 
 function HomePage() {
 
@@ -30,11 +35,20 @@ function HomePage() {
     }
   }
 
-  // throttle implementation
-  let throttleHandle =  throttle(extractPeopleInfo, 500)
-
   useEffect(() => {
-    throttleHandle(search)
+    // throttle implementation
+    if (!time) {
+      time = Date.now()
+      extractPeopleInfo(search)
+    } else {
+      clearTimeout(previous)
+      previous = setTimeout(function() {
+        if ((Date.now() - time) >= wait) {
+          extractPeopleInfo(search)
+          time = Date.now()
+        }
+      }, wait - (Date.now() - time))
+    }
     // eslint-disable-next-line
   }, [search])
 
@@ -80,12 +94,13 @@ function HomePage() {
       <div className={styles.inputWrapper}>
         <div>
           <input  type="text" 
-                  className={styles["search-input"] + " bg-brown-gray color-whitish"} 
+                  className={styles["search-input"] + " bg-brown-gray color-whitish focused"} 
                   placeholder="Search by name" 
                   value={search} 
                   onChange={handleSearch} 
                   onKeyUp={handleSpclKeys} 
                   onClick={() => listFocusIndexRef.current = 0} 
+                  autoFocus
           />
           <SearchUtils loading={loading} clearSearch={clearSearch} search={search} />
           <SearchResult people={people} handleSpclKeys={handleSpclKeys} listRef={listRef} />
