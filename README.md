@@ -1,6 +1,6 @@
 # Star Wars Searchbar
 
-> A searchbar that filters and lists your favourite star wars character as you type their names and on clicking, redirects the profile page of the character.
+> A searchbar that filters and lists your favourite star wars character as you type their names and on clicking, redirects to the profile page.
 
 ## Visual Intructions on how to use it
 
