@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { getFilms, getHomeWorld } from '../../utils/api-calls';
+import React from 'react'
 import {v4 as uuid} from 'uuid'
 
-export const Bio = ({person}) => {
-
-	let [homeWorld, setHomeWorld] = useState("")
-	let [films, setFilms] = useState([])
+export const Bio = ({person, homeWorld, films}) => {
 
     const bioDetail = [
         {
@@ -37,23 +33,6 @@ export const Bio = ({person}) => {
             value: person.skin_color
         }
     ]
-
-	useEffect(() => {
-		
-		(async function(){
-			let home = await getHomeWorld(person.homeworld)
-			if(home){
-				setHomeWorld(home.name)
-			}
-
-			let films = await getFilms(person.films)
-			if(films){
-				setFilms(films)
-			}
-		})()
-
-	}, [])
-
 
     return (
         <div>

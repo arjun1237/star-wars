@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMale, faFemale } from '@fortawesome/free-solid-svg-icons'
 import { Bio } from './Bio';
 
-export const DisplayPerson = ({person}) => {
+export const DisplayPerson = ({person, homeWorld, films}) => {
 
 	return (
 		<div className={styles.personDetails + " color-yellow"}>
@@ -12,7 +12,7 @@ export const DisplayPerson = ({person}) => {
 				<h1>{person.name}</h1>
 				<FontAwesomeIcon icon={person.gender === "male" ? faMale : faFemale} size="10x" />
 			</div>
-			<Bio person={person} />
+			<Bio person={person} homeWorld={homeWorld} films={films} />
 		</div>
 	)
 }
