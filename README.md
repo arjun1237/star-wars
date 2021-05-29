@@ -20,6 +20,7 @@ The App was tested with Cypress. Several use cases was implemented and passed as
 ## Optmization
 
 - Used Combination of throttling and debounce to reduce API calls made for each key stroke on the searchbar.
+- Currently trying to Memoize Person Page based on params, but approached few hurdles. If you are interested in doing so, please feel free to fork it and raise a PR once done.
 
 ## Acknowledgments
 
