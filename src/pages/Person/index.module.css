@@ -1,5 +1,6 @@
 .personDetails {
     display: flex;
+    align-items: center;
 }
 
 .personDetails > div{
@@ -11,11 +12,14 @@
 }
 
 .frame{
-    border: 6px solid;
+    /* border: 6px solid; */
+    background-color: #201b1b;
     padding: 40px 20px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     height: fit-content;
     text-align: center;
+    min-width: 250px;
+    box-shadow: 5px 5px #201b1b, 10px 10px #302b2b, 15px 15px #413c3c;
 }
 
 .frame > *{
@@ -25,11 +29,26 @@
 
 table{
     font-size: 16px;
-    max-width: 300px;
+    /* max-width: 700px; */
+    border-collapse: collapse;
+}
+
+tr{
+    background-color: #201b1b;
+}
+
+tbody > tr > td{
+    border-bottom: 2px solid #110b0b;
+    padding: 10px 20px;
 }
 
 tr > td:first-of-type{
     width: 100px;
+}
+
+tr > td:last-of-type{
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 table td{
@@ -41,8 +60,9 @@ table td{
     text-align: center;
     width: fit-content;
     padding: 10px 30px;
-    border-radius: 3px;
-    border: 2px solid;
+    background-color: transparent;
+    border: 2px solid #686925;
+    color: #959725;
     font-weight: 800;
 }
 

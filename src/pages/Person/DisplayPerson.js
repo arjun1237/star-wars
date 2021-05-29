@@ -22,7 +22,7 @@ export const DisplayPerson = ({person, homeWorld, films}) => {
 				<Bio person={person} homeWorld={homeWorld} films={films} />
 			</div>
 			<div className={styles.btnWrap + " button"}>
-				<div className={"border-color-yellow color-yellow " + styles.btnHover} onClick={clickHandler}>Back to HOME</div>
+				<div className={styles.btnHover} onClick={clickHandler}>Back to HOME</div>
 			</div>
 		</div>
 	)
