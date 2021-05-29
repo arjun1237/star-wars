@@ -7,8 +7,6 @@
     border: 0;
     outline: 0;
     font-size: 1rem;
-    background: #2d2f30;
-    color: #f2f2f2;
 }
 
 .logo {
@@ -40,8 +38,6 @@
 }
 
 .listWrap{
-    background: #2d2f30;
-    color: #f2f2f2;
     padding: 0 0 10px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -70,10 +66,6 @@
     background-color: #1b1c1d;
 }
 
-.grayed{
-    color: #f2f2f283;
-}
-
 .divider{
     height: 20px;
     margin-top: -20px;
@@ -85,7 +77,6 @@
 }
 
 .line{
-    background: #110b0b;
     height: 1px;
     margin: 0 10px;
     position: relative;
@@ -104,7 +95,6 @@
 .verticalDivider{
     height: 30px;
     width: 1px;
-    background-color: #110b0b;
 }
 
 .cross{
