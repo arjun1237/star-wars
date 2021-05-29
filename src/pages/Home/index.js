@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import {v4 as uuid} from 'uuid'
 import { capitalizeFirstLetter, getID } from '../../utils/helperFunctions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import {SearchUtilsWrapper} from '../../styles/home-styles'
 
 function HomePage() {
 
   const [search, setSearch] = useState("")
   const [people, setPeople] = useState([])
+  const [loading, setLoading] = useState(false)
   let time = useRef()
   let previous = useRef()
   let listRef = useRef([])
@@ -49,10 +50,12 @@ function HomePage() {
       setPeople([])
     }
     else{
+      setLoading(true)
       let res = await getSearchResults(search.trim())
       if(res){
         setPeople(res)
       }
+      setLoading(false)
     }
   }
 
@@ -91,7 +94,8 @@ function HomePage() {
             </div>
             <div className={`${styles.verticalDivider} searchUtilDisplay`}></div>
             <div className={styles.searchbarIcon}>
-              <FontAwesomeIcon icon={faSearch} />
+              {!loading ? <FontAwesomeIcon icon={faSearch} /> : 
+                          <FontAwesomeIcon icon={faSpinner} className="spinner" />}
             </div>
           </SearchUtilsWrapper>
           <input type="text" className={styles["search-input"]} placeholder="Search by name" value={search} onChange={handleSearch} onKeyUp={handleArrows} onClick={() => listFocusIndexRef.current = 0} />
