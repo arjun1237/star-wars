@@ -2,6 +2,10 @@
 
 > A searchbar that filters and lists your favourite star wars character as you type their names and on clicking, redirects to the profile page.
 
+## Live Demo Link
+
+[CLICK HERE FOR LIVE DEMO](https://urban-star-wars.netlify.app/)
+
 ## Visual Intructions on how to use it
 
 ![image](https://raw.githubusercontent.com/arjun1237/star-wars/main/public/product-final.gif)
