@@ -15,10 +15,6 @@ function HomePage() {
   let listRef = useRef([]) // has access to each of the person list
   let listFocusIndexRef = useRef(0) // used to identify which list to focus on
 
-  useEffect(() => {
-    throttleHandle(search)
-  }, [search])
-
   const extractPeopleInfo = async (search) => {
     if(search.length === 0){
       listFocusIndexRef.current = 0
@@ -35,7 +31,14 @@ function HomePage() {
   }
 
   // throttle implementation
-  let throttleHandle = throttle(extractPeopleInfo, 750)
+  let throttleHandle = () => {
+    throttle(extractPeopleInfo, 750)
+  }
+
+  useEffect(() => {
+    throttleHandle(search)
+    // eslint-disable-next-line
+  }, [search])
 
   const handleSearch = (e) => {
     let val = e.target.value
