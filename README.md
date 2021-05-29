@@ -57,7 +57,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Utilized prop frilling and and basic concepts of react to build this application
+- Utilized prop drilling and basic concepts of react to build this application
 - Used SWABI API for all API calls
 
 ## 📝 License
