@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import logo from './star-wars-logo.png';
+import logo from '../../resources/pics/star-wars-logo.png';
 import styles from './index.module.css';
 import {getSearchResults} from '../../utils/api-calls'
 import { throttle } from '../../utils/throttle'
@@ -43,7 +43,7 @@ function HomePage() {
     listFocusIndexRef.current = 0
   }
 
-  const handleArrows = (e) => {
+  const handleSpclKeys = (e) => {
     if(people.length === 0){
       listFocusIndexRef.current = 0
       return
@@ -83,11 +83,11 @@ function HomePage() {
                   placeholder="Search by name" 
                   value={search} 
                   onChange={handleSearch} 
-                  onKeyUp={handleArrows} 
+                  onKeyUp={handleSpclKeys} 
                   onClick={() => listFocusIndexRef.current = 0} 
           />
           <SearchUtils loading={loading} clearSearch={clearSearch} search={search} />
-          <SearchResult people={people} handleArrows={handleArrows} listRef={listRef} />
+          <SearchResult people={people} handleSpclKeys={handleSpclKeys} listRef={listRef} />
         </div>
       </div>
     </div>

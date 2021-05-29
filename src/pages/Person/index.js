@@ -10,8 +10,8 @@ function Person() {
   let {id} = useParams()
   const [person, setPerson] = useState(null)
   const [loading, setLoading] = useState(false)
-	let [homeWorld, setHomeWorld] = useState("")
-	let [films, setFilms] = useState([])
+	const [homeWorld, setHomeWorld] = useState("")
+	const [films, setFilms] = useState([])
 
   useEffect(() => {
     (async function(){
@@ -19,23 +19,26 @@ function Person() {
       const person = await getPerson(id)
       if(person){
         setPerson(person)
+        let home = await getHomeWorld(person.homeworld)
+        if(home){
+          setHomeWorld(home.name)
+        }
+  
+        let films = await getFilms(person.films)
+        if(films){
+          setFilms(films)
+        }
       }
-			let home = await getHomeWorld(person.homeworld)
-			if(home){
-				setHomeWorld(home.name)
-			}
-
-			let films = await getFilms(person.films)
-			if(films){
-				setFilms(films)
-			}
       setLoading(false)
     })()
 
-  }, [])
+  }, [id])
 
   return  loading ? <FontAwesomeIcon icon={faSpinner} size="6x" className={`color-yellow spinner`} /> : 
-          person ?  <DisplayPerson person={person} homeWorld={homeWorld} films={films} /> : <h1 className="color-yellow">Person Not Found..!</h1>;
+          person ?  <DisplayPerson  person={person} 
+                                    homeWorld={homeWorld} 
+                                    films={films} 
+                    /> : <h1 className="color-yellow" style={{textAlign: "center"}}>Person Not Found..!</h1>;
 }
 
 export default Person;

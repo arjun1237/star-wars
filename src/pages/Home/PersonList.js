@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { capitalizeFirstLetter, getID } from '../../utils/helperFunctions';
-import styles from './index.module.css';
 
-export const PersonList = ({idx, handleArrows, person, listRef}) => {
+export const PersonList = ({idx, handleSpclKeys, person, listRef}) => {
 	return (
-		<Link to={`/person/${getID(person.url)}`} ref={el => listRef.current[idx] = el} tabIndex={idx+1} onKeyUp={handleArrows} >
+		<Link to={`/person/${getID(person.url)}`} ref={el => listRef.current[idx] = el} tabIndex={idx+1} onKeyUp={handleSpclKeys} >
 			<li>
 				<div>
 					<div>{person.name}</div>  

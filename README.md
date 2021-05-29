@@ -1,83 +1,65 @@
-<p align="center">
-  <img src="https://s3-ap-southeast-1.amazonaws.com/asia.urbanpiper.com/static/frontend/images/logo.svg" alt="UrbanPiper" width="226">
-</p>
+# Chitrakala - Ticket Booking React app
 
-<p align="center">A Short Assignment for Frontend Engineers</p>
+> A searchbar that filters and lists your favourite star wars character as you type their names and on clicking, redirects the profile page of the character.
 
-## Why an assignment?
-We believe that the best way to understand the capability of a programmer is to see their work. 
-Moreover, "work" is not just about how you can string together a bunch of nifty statements to produce a desired result—it encompasses the thought you put in to structure your application, the effort you put in to write out comments in your code and commits to help your collaborators, 
-the tests you write to make your code resilient and they way you document your approach around components that you build out. 
-A resumé usually falls woefully short on providing a clear insight into all this. 
 
-The only reason we want you to try out this assignment is because it should be _fun_, and also, 
-it helps us structure our conversations with you going forward. If you feel that you have sufficient work in the 
-public domain for us to go through, feel free to skip this assignment and let us know. 
-Still, if you feel curious enough to take a shot at it, well, let's get started...
+## Built With
 
-## The Story
-A long time ago in a galaxy far, far away...
+- React js
+- Styled Components
 
-It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.
+## Getting Started
 
-During the battle, rebel spies manageed to steal secret plans to the Empire's ultimate weapon. Rather oddly these plans contain
-blueprints for a UI component to search for Star Wars characters by name. Perplexed, the Rebel Command decides to build this for themselves.
+**Just fork it and fell free to use it.**
 
-You are tasked with building this component to help the rebels restore freedom to the galaxy...
+To get a local copy up and running follow these simple example steps.
 
-## The Assignment
-This repository contains a basic scaffolding of a React app. We have purposefully kept the dependencies to a minimum, 
-it is by no means supposed to be a limitation. You can go ahead and introduce any library/software system that you 
-feel will help you create a better solution. However please make sure you do not use an external library for the Search component itself. This is a core part of the assignment and we expect you to implement it yourself.
+### Prerequisites
 
-You can make use of the publicly accessible API Service — [Star Wars API — SWAPI](https://swapi.dev/). Use the `/people/` endpoint to search for characters.
+1 Install Node js in your local system
+2 Code Editor
+3 Browser (optional)
 
-We have included designs for the component in the repository. Stick close to the given designs, but if you feel like some aspect can be improved
-please feel free to do so. We would love to discuss that in the discussions that follow.
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/1500309/87780788-0a5b1600-c84d-11ea-8209-6873be1f8b26.png" alt="Readme Image">
-</p>
+### Install
 
-## Installing and Running
-The repository contains a minimal scaffolding created with [Create React App](https://github.com/facebook/create-react-app). This is only meant as
-a starting point and you are free to change the structure if you wish. 
+After making a clone of this repo open your cmd/terminal and use
 
-1. To get started, install your dependencies
-```
-yarn install
-```
+`npm install` (this will install all the dependencies )
 
-2. Run the app in development mode
-```
-yarn start
-```
+### Starting app
 
-3. Make the neccessary changes to complete the assignment
-4. Push out the changes to your forked repository.
-5. Raise a PR against our main repository from which you forked and let us know.
-6. That's it!
+Once everything has been installed, go to root folder. In the terminal type:
 
-## 1—Search Component
-You are to build a search component to search for characters by name. Similar to how Google's search box works
-we expect the component to search as the user is typing. Also ensure the user can use the keyboard to navigate the results (Arrow keys and Enter to select)
+`npm start` (this will open localhost and start the app)
 
-Also, be mindful of calling the API at a reasonable rate as the user is typing.
+## Authors
 
-## 2—Character Page
-The user should be able to select a character from search results and view details about the character. Build a simple page
-which shows details about the chosen character. 
 
-We have not shared a design for this page on purpose. You're free to build it to your own taste. Don't worry, we do not expect you to
-be an expert designer.
+👤 **Arjun K Prasad**
 
-## Things we will look for
-- Clean code and using best practices
-- Quality of the UI/UX of your solution
-- Funcionality of your overall solution and correctness
+- Portfolio: (http://portfolio-arjun1237.vercel.app/)
+- Github: [@arjun1237](https://github.com/arjun1237/)
+- Hackerrank: [@arjun1237](https://www.hackerrank.com/arjun1237)
+- Linkedin: [@arjun1237](https://www.linkedin.com/in/arjun1237/)
+- Email: (arjun1237.kp@gmail.com)
 
-## Submission
-Once you have completed your implementation, please raise a PR against the main repository from which you forked your repository. 
-Drop us a mail (join@urbanpiper.com) with the link to your PR.
 
-:zap: May the Force be with you :zap:
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/arjun1237/star-wars/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Utilized prop frilling and and basic concepts of react to build this application
+- Used SWABI API for all API calls
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
