@@ -1,4 +1,6 @@
 
+/* search bar */
+
 .search-input {
     width: 28vw;
     max-width: 300px;
@@ -8,6 +10,17 @@
     outline: 0;
     font-size: 1rem;
 }
+
+.inputWrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+
+/* logo */
 
 .logo {
     text-align: center;
@@ -19,22 +32,22 @@
     max-width: 200px;
 }
 
-.searchUtils{
-    position: absolute;
-    display: flex;
-    right: 6px;
-    top: 8px;
-    align-items: center;
+
+
+
+/* list styling */
+
+.listWrap::-webkit-scrollbar {
+    width: 0.5em;
 }
 
-.searchUtils > div{
-    margin: 0 5px;
+.listWrap::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.inputWrapper{
-    display: flex;
-    justify-content: center;
-    position: relative;
+.listWrap::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    outline: 1px solid #31353a;
 }
 
 .listWrap{
@@ -66,6 +79,34 @@
     background-color: #1b1c1d;
 }
 
+
+
+
+
+/* utils */
+
+.verticalDivider{
+    height: 30px;
+    width: 1px;
+}
+
+.cross{
+    color: #929292;
+    cursor: pointer;
+}
+
+.searchUtils{
+    position: absolute;
+    display: flex;
+    right: 6px;
+    top: 8px;
+    align-items: center;
+}
+
+.searchUtils > div{
+    margin: 0 5px;
+}
+
 .divider{
     height: 20px;
     margin-top: -20px;
@@ -90,29 +131,6 @@
     place-items: center;
     border-radius: 16px;
     cursor: pointer;
-}
-
-.verticalDivider{
-    height: 30px;
-    width: 1px;
-}
-
-.cross{
-    color: #929292;
-    cursor: pointer;
-}
-
-.listWrap::-webkit-scrollbar {
-    width: 0.5em;
-}
-
-.listWrap::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.listWrap::-webkit-scrollbar-thumb {
-    background-color: #4e4e4e;
-    outline: 1px solid #31353a;
 }
 
 

@@ -3,6 +3,8 @@ import { PersonList } from './PersonList';
 import {v4 as uuid} from 'uuid'
 import styles from './index.module.css';
 
+
+// this is more of the wrapper  that holds the entire list of people
 export const SearchResult = ({people, handleSpclKeys, listRef}) => {
     return (
         <>

@@ -4,6 +4,8 @@ import { faTimes, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { SearchUtilsWrapper } from '../../styles/home-styles'
 import styles from './index.module.css';
 
+
+// this component contains utilities that beautifies the search engine
 export const SearchUtils = ({loading, search, clearSearch}) => {
     return (
         <SearchUtilsWrapper className={styles.searchUtils} display={(search.length > 0).toString()}>

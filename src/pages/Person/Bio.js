@@ -1,6 +1,8 @@
 import React from 'react'
 import {v4 as uuid} from 'uuid'
 
+
+// This component displays the Bio of the person in person page
 export const Bio = ({person, homeWorld, films}) => {
 
     const bioDetail = [
