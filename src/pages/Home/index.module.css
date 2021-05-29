@@ -93,12 +93,12 @@
 }
 
 .searchbarIcon{
-    background-color: #EBCF23;
     height: 32px;
     width: 32px;
     display: grid;
     place-items: center;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 .verticalDivider{
@@ -109,6 +109,7 @@
 
 .cross{
     color: #929292;
+    cursor: pointer;
 }
 
 .listWrap::-webkit-scrollbar {

@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import logo from './star-wars-logo.png';
 import styles from './index.module.css';
 import {getSearchResults} from '../../utils/api-calls'
-import { Link } from 'react-router-dom';
-import {v4 as uuid} from 'uuid'
-import { capitalizeFirstLetter, getID } from '../../utils/helperFunctions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import {SearchUtilsWrapper} from '../../styles/home-styles'
+import { PersonList } from './PersonList';
 
 function HomePage() {
 
@@ -66,7 +64,11 @@ function HomePage() {
       return
     }
     let code = e.keyCode
-    if(code === 38 || code === 40){
+    if(code === 27){
+      setPeople([])
+      listFocusIndexRef = 0
+    }
+    else if(code === 38 || code === 40){
       if(code === 40){
         listFocusIndexRef.current = listFocusIndexRef.current === people.length ? 1 : ++listFocusIndexRef.current
       }
@@ -93,7 +95,7 @@ function HomePage() {
               <FontAwesomeIcon icon={faTimes} />
             </div>
             <div className={`${styles.verticalDivider} searchUtilDisplay`}></div>
-            <div className={styles.searchbarIcon}>
+            <div className={styles.searchbarIcon + (loading ? " color-yellow" : " bg-yellow")}>
               {!loading ? <FontAwesomeIcon icon={faSearch} /> : 
                           <FontAwesomeIcon icon={faSpinner} className="spinner" />}
             </div>
@@ -108,15 +110,7 @@ function HomePage() {
               </div>
               <ul className={styles.listWrap}>
                 {people.map((person, idx) =>
-                  <Link to={`/person/${getID(person.url)}`} key={uuid()} ref={el => listRef.current[idx] = el} tabIndex={idx+1} onKeyUp={handleArrows} >
-                    <li>
-                      <div>
-                        <div>{person.name}</div>  
-                        <div className={styles.grayed}>{capitalizeFirstLetter(person.gender)}</div>  
-                      </div>  
-                      <div className={styles.grayed}>{person.birth_year}</div>  
-                    </li>
-                  </Link>
+                  <PersonList idx={idx} person={person} handleArrows={handleArrows} listRef={listRef} />
                 )}
               </ul>
             </div>
