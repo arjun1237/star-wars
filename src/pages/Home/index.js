@@ -31,9 +31,7 @@ function HomePage() {
   }
 
   // throttle implementation
-  let throttleHandle = () => {
-    throttle(extractPeopleInfo, 750)
-  }
+  let throttleHandle =  throttle(extractPeopleInfo, 750)
 
   useEffect(() => {
     throttleHandle(search)
